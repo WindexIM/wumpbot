@@ -42,4 +42,12 @@ client.on(Events.InteractionCreate, async interaction => {
   }
 });
 
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => res.send('bot is running!'));
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+
+
 client.login(process.env.TOKEN);
